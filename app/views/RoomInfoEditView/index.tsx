@@ -618,9 +618,11 @@ class RoomInfoEditView extends React.Component<IRoomInfoEditViewProps, IRoomInfo
 						<View style={styles.switches}>
 							<SwitchContainer
 								value={t}
-								leftLabelPrimary={I18n.t('Public')}
+								leftLabelPrimary={I18n.t('Private')}
 								leftLabelSecondary={
-									room.teamMain ? I18n.t('Everyone_can_access_this_team') : I18n.t('Everyone_can_access_this_channel')
+									room.teamMain
+										? I18n.t('Just_invited_people_can_access_this_team')
+										: I18n.t('Just_invited_people_can_access_this_channel')
 								}
 								onValueChange={this.toggleRoomType}
 								testID='room-info-edit-view-t'
